@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import UrlShortener from "./UrlShortener";
 
 type Info = {
   title: string;
@@ -31,6 +32,7 @@ const Fetures: React.FC = () => {
 
   return (
     <section className="bg-gray/30 mt-20 py-6 px-6 md:px-28">
+      <UrlShortener />
       <div className="flex flex-col gap-8 items-center">
         <h2 className="font-bold text-3xl text-center">Advanced Satsfaction</h2>
         <p className="text-gray-500 text-center max-w-lg">
