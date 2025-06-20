@@ -41,8 +41,8 @@ const MainNavigation: React.FC = () => {
           <button className="font-bold text-gray hover:text-gray-900 transition capitalize">
             login
           </button>
-          <button className="rounded-full w-full py-3 px-4 bg-cyan font-bold hover:bg-cyan/80 text-white transition">
-            signup
+          <button className="rounded-full capitalize cursor-pointer w-full py-3 px-4 bg-cyan font-bold hover:bg-cyan/80 text-white transition">
+            sign up
           </button>
         </div>
       </div>
