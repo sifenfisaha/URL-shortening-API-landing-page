@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import { Menu, X } from "lucide-react";
-import { FcCancel } from "react-icons/fc";
 
 const MainNavigation: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
