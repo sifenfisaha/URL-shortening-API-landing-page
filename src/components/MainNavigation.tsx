@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.svg";
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FcCancel } from "react-icons/fc";
 
 const MainNavigation: React.FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -48,12 +49,12 @@ const MainNavigation: React.FC = () => {
       </div>
 
       <button
-        className="md:hidden z-50"
+        className="md:hidden z-50 scale-140"
         onClick={() => setIsMobileNavOpen((prev) => !prev)}
         aria-label="Toggle menu"
         aria-expanded={isMobileNavOpen}
       >
-        <Menu />
+        {!isMobileNavOpen ? <Menu /> : <X />}
       </button>
     </header>
   );

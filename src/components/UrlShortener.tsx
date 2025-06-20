@@ -16,9 +16,9 @@ const UrlShortener: React.FC = () => {
       return;
     }
     try {
+      setInputUrl("");
       const data = await shortenUrl(inputUrl);
       addLink({ originalUrl: inputUrl, shortUrl: data.shortUrl });
-      setInputUrl("");
     } catch (error) {
       console.error("Shorten failed", error);
     }
@@ -38,6 +38,7 @@ const UrlShortener: React.FC = () => {
           onSubmit={handleShorten}
         >
           <input
+            value={inputUrl}
             className={`p-2 bg-white focus:ring-1 ${
               !error ? "focus:ring-cyan" : "focus:ring-red-400"
             } focus:outline-none w-full rounded-lg`}

@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         </p>
         <Button lable="Get Started" />
       </div>
-      <div className="order-2 md:order-1">
+      <div className="order-1 md:order-2">
         <img src={bg} alt="illustration" />
       </div>
     </section>
