@@ -5,10 +5,16 @@ import { shortenUrl } from "../services/urlService";
 const UrlShortener: React.FC = () => {
   const [inputUrl, setInputUrl] = useState<string>("");
   const [copiedUrl, setCopiedUrl] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
   const { addLink, links } = useUrlStore();
   console.log(links);
 
-  const handleShorten = async () => {
+  const handleShorten = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (inputUrl.trim() === "") {
+      setError(true);
+      return;
+    }
     try {
       const data = await shortenUrl(inputUrl);
       addLink({ originalUrl: inputUrl, shortUrl: data.shortUrl });
@@ -32,10 +38,21 @@ const UrlShortener: React.FC = () => {
           onSubmit={handleShorten}
         >
           <input
-            className="p-2 bg-white focus:ring-1 focus:ring-cyan focus:outline-none w-full rounded-lg"
-            onChange={(e) => setInputUrl(e.target.value)}
+            className={`p-2 bg-white focus:ring-1 ${
+              !error ? "focus:ring-cyan" : "focus:ring-red-400"
+            } focus:outline-none w-full rounded-lg`}
+            onChange={(e) => {
+              setInputUrl(e.target.value);
+              setError(false);
+            }}
             type="text"
+            placeholder="shorten a link here..."
           />
+          {error && (
+            <p className="text-red-500 text-sm mt-2">
+              Please enter a valid URL
+            </p>
+          )}
           <button className="px-5 py-3 bg-cyan rounded-lg text-nowrap font-bold text-white cursor-pointer hover:bg-cyan/80 duration-300">
             shorten url
           </button>

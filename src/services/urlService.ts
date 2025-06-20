@@ -1,5 +1,3 @@
-// urlService.ts
-
 export const shortenUrl = async (originalUrl: string) => {
   const res = await fetch(
     `https://api.1pt.co/addURL?long=${encodeURIComponent(originalUrl)}`
