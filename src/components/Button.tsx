@@ -17,7 +17,7 @@ const Button: React.FC<Props> = ({ border = true, lable, onclick }) => {
       onClick={hadnleClick}
       className={`${
         border ? "rounded-full" : "rounded-sm"
-      } bg-cyan py-3 px-8 font-bold text-white hover:bg-cyan/80 transition duration-200 ease-in-out
+      } bg-cyan py-3 px-8 font-bold text-white cursor-pointer hover:bg-cyan/80 transition duration-200 ease-in-out
         `}
     >
       {lable}

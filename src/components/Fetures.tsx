@@ -30,7 +30,7 @@ const Fetures: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gray/30 my-20 py-6 px-6 md:px-28">
+    <section className="bg-gray/30 mt-20 py-6 px-6 md:px-28">
       <div className="flex flex-col gap-8 items-center">
         <h2 className="font-bold text-3xl text-center">Advanced Satsfaction</h2>
         <p className="text-gray-500 text-center max-w-lg">
@@ -38,7 +38,7 @@ const Fetures: React.FC = () => {
           statistics dashboard.
         </p>
       </div>
-      <div className="flex my-20 items-center justify-center gap-20">
+      <div className="flex md:flex-row flex-col my-20 items-center justify-center gap-20">
         {features.map((fetures, i) => (
           <Card
             key={i}
